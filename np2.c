@@ -19,7 +19,9 @@ int knapsack(int i, int w) {
     if (weight[i] > w) {
         dp[i][w] = knapsack(i+1, w);
     } else {
-        dp[i][w] = max(knapsack(i+1, w), knapsack(i+1, w-weight[i]) + value[i]);
+        int not_taken = knapsack(i+1, w);
+        int taken = knapsack(i+1, w-weight[i]) + value[i];
+        dp[i][w] = (not_taken > taken) ? not_taken : taken;
     }
     return dp[i][w];
 }
@@ -38,3 +40,6 @@ int main() {
     printf("The maximum value that can be obtained is: %d\n", knapsack(0, capacity));
     return 0;
 }
+; you should initialize the entire DP table up to MAX_WEIGHT, not just up to 'capacity', 
+    ; because the recursive function knapsack() could potentially result in weight w value more than the 'capacity'. 
+    ; This could cause an out of bounds access if w-weight[i] > 'capacity'.
