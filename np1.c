@@ -26,7 +26,7 @@ int main() {
     }
     scanf("%d", &target);
     for (int i = 0; i <= n; i++) {
-        for (int j = 0; j <= target; j++) {
+        for (int j = 0; j <= MAX_SUM; j++) {
             dp[i][j] = -1;
         }
     }
@@ -37,3 +37,5 @@ int main() {
     }
     return 0;
 }
+;make sure that the input does not exceed the predefined MAX_N and MAX_SUM, 
+;otherwise you may need to dynamically allocate the dp table and the set.
