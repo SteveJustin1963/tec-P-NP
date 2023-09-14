@@ -1,14 +1,64 @@
 # tec-P-NP
 
-P and NP are classes of computational problems in theoretical computer science.
 
-P, also known as "polynomial time," is a class of problems that can be solved in polynomial time using a deterministic algorithm. This means that the time it takes for the algorithm to solve the problem grows at most polynomially with the size of the input. Examples of P problems include sorting an array, finding the shortest path in a graph, and primality testing.
+# P vs NP
 
-NP, which stands for "nondeterministic polynomial time," is a class of problems for which a proposed solution can be verified in polynomial time. This means that given a proposed solution, it can be verified whether it is correct or not in polynomial time. Examples of NP problems include the travelling salesman problem, the knapsack problem and the satisfiability problem.
+In theoretical computer science, we often encounter the fascinating topic of P and NP classes of computational problems. Simply put, P consists of problems that can be solved in polynomial time through deterministic algorithms. Some classic examples include sorting arrays and finding the shortest path in a graph.
+
+NP, short for "nondeterministic polynomial time," represents problems for which a solution can be verified in polynomial time. For instance, problems like the traveling salesman and the knapsack problem fall under this category.
+
+The question of whether P=NP or P≠NP remains one of the most significant open questions in the field. Now, let's consider some implications of resolving this question:
+
+## If P=NP or P≠NP
+
+1. If P=NP is proven, many, but not all, cryptographic systems like AES and DES would be jeopardized. However, the time complexity might still be impractical for breaking these systems depending on the polynomial's degree.
+
+2. A proof would usher in renewed interest in algorithms and could lead to revolutionary changes in optimization and data analysis.
+
+3. Contrary to some assumptions, proving P=NP wouldn't necessarily speed up inherently exponential scientific modeling, like protein synthesis or subatomic modeling.
+
+4. The development of self-aware AI is a complex topic and would likely not be directly affected by solving the P vs NP problem.
+
+## Polynomial Time Algorithms
+
+When we talk about polynomial time algorithms, we're discussing algorithms with execution times that can be expressed or bounded by a polynomial function of the input size, denoted by \( n \). Problems solvable by these algorithms are called "tractable" problems. For example, Bubble Sort, in its basic form, has a worst-case time complexity of \( O(n^2) \). Meanwhile, algorithms like QuickSort perform at \( O(n \log n) \) on average, a time complexity that is generally efficient and acceptable for most applications, even if not strictly polynomial.
+
+## Problem-Solving Steps and Plans
+
+1. **Step 1**: First, determine if the problem at hand belongs to the NP class.
+  
+2. **Step 2**: If it is an NP problem, look for polynomial time algorithms to solve it.
+
+3. **Step 3**: If the problem doesn't fall under NP, it's worth investigating if it's a P-problem at all using various techniques like problem reduction.
+
+## Example Problems
+
+### Subset Sum Problem (np1.c)
+The subset sum problem involves finding a subset within a given set of integers that sums up to a target integer. Since this is an NP problem, I'll use a recursive approach with memoization for solving it. [Insert Code Snippet for np1.c]
+
+### Knapsack Problem (np2.c)
+The Knapsack problem is another classic NP problem. For this, I'll employ a recursive algorithm optimized by memoization. [Insert Code Snippet for np2.c]
+
+## References
+
+- [Wikipedia: Time complexity](https://en.wikipedia.org/wiki/Time_complexity)
+- [Stanford Lecture Notes on P vs NP](http://theory.stanford.edu/~trevisan/cs254/notes/lecture02.pdf)
+
+/////////////////////////////
+
+
+
+## P and NP are classes of computational problems in theoretical computer science.
+
+# P
+also known as "polynomial time," is a class of problems that can be solved in polynomial time using a deterministic algorithm. This means that the time it takes for the algorithm to solve the problem grows at most polynomially with the size of the input. Examples of P problems include sorting an array, finding the shortest path in a graph, and primality testing.
+
+## NP
+which stands for "nondeterministic polynomial time," is a class of problems for which a proposed solution can be verified in polynomial time. This means that given a proposed solution, it can be verified whether it is correct or not in polynomial time. Examples of NP problems include the travelling salesman problem, the knapsack problem and the satisfiability problem.
 
 It is not known whether P=NP, meaning that all problems in NP can be solved in polynomial time or P≠NP, meaning that there exists at least one problem in NP that cannot be solved in polynomial time.
 
-What would happen if someone proves P=NP or P!=NP?
+## What would happen if someone proves P=NP or P!=NP?
 - every NP problem would contain a hidden shortcut, allowing computers to quickly find perfect solutions to them.
 - would include renewed interest in finding a reduction algorithm. 
 - try to find some lower bounds on the constants associated with the reduction algorithm.
@@ -18,7 +68,6 @@ What would happen if someone proves P=NP or P!=NP?
  
 
 ## polynomial time algorithms
-
 is an algorithm whose execution time is either given by a polynomial on the size of the input, or can be bounded by such a polynomial. Problems that can be solved by a polynomial-time algorithm are called tractable problems. For example, most algorithms on arrays can use the array size, n, as the input size. To find the largest element in an array requires a single pass through the array, so the algorithm for doing this is O(n), or linear time. Sorting algorithms usually require either O(n log n) or O(n2) time. Bubble sort takes linear time in the best case, but O(n2) time in the average and worst cases. Heapsort takes O(n log n) time in all cases. Quicksort takes O(n log n) time on average, but O(n2) time in the worst case. Regarding O(n log n) time, note that; the base of the logarithms is irrelevant, since the difference is a constant factor, which we ignore; and although n log n is not, strictly speaking, a polynomial, the size of n log n is bounded by n2, which is a polynomial. Probably all the programming tasks you are familiar with have polynomial-time solutions. This is not because all practical problems have polynomial-time solutions. Rather, it is because your courses and your day-to-day work have avoided problems for which there is no known practical solution .https://www.seas.upenn.edu/~cit596/notes/dave/p-and-np0.html
 
 In other words...A polynomial time algorithm is an algorithm whose running time is a polynomial function of the size of the input, typically denoted by 'n'. The complexity class of problems that can be solved in polynomial time is called P. These problems include common tasks such as sorting and searching, which can be solved using algorithms such as bubble sort, heapsort, and quicksort. These algorithms have different time complexities, with some being more efficient than others. For example, bubble sort has a time complexity of O(n^2) in the worst case, while quicksort has an average time complexity of O(n log n). It's important to note that while O(n log n) is not strictly speaking a polynomial, it is still considered to be a tractable problem because it is bounded by O(n^2).
