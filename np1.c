@@ -77,7 +77,7 @@ int main() {
     return 0;
 }
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-To improve the given code, we can make the following changes:
+ 
 
 1. Input Validation: Check that `n` and `sum` do not exceed `MAX_N` and `MAX_SUM`.
 2. Dynamic Memory Allocation: Optionally allocate `dp` and `set` dynamically based on the input size.
